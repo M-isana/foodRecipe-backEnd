@@ -8,4 +8,6 @@ public interface RecipeService {
 
 	List<Recipe> getAllRecipes();
 	
+	void addRecipe(Recipe recipe);
+	
 }

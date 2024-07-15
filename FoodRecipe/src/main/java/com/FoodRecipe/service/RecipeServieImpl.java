@@ -11,8 +11,8 @@ import com.FoodRecipe.repository.RecipeRepository;
 
 @Service(value = "RecipeService")
 @Transactional
-public class RecipeServieImpl implements RecipeService{
-	
+public class RecipeServieImpl implements RecipeService {
+
 	@Autowired
 	RecipeRepository recipeRepository;
 
@@ -20,6 +20,11 @@ public class RecipeServieImpl implements RecipeService{
 	public List<Recipe> getAllRecipes() {
 		List<Recipe> list = recipeRepository.findAll();
 		return list;
+	}
+
+	@Override
+	public void addRecipe(Recipe recipe) {
+		recipeRepository.save(recipe);
 	}
 
 }

@@ -1,4 +1,4 @@
-package com.FoodRecipe.service;
+package com.FoodRecipe.controller;
 
 import java.util.List;
 
@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.FoodRecipe.model.Recipe;
+import com.FoodRecipe.service.RecipeService;
 
 @RestController
 @RequestMapping(value = "/recipe")

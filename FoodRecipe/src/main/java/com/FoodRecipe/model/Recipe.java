@@ -18,11 +18,9 @@ public class Recipe {
 	private Integer recipeID;
 	@Column(name = "recipe_name")
 	private String recipeName;
-	@Column(name = "recipe_description")
-	private String recipeDescription;
-	@Column(name ="recipeDate")
+	@Column(name = "recipeDate")
 	private LocalDate recipeDate;
-	@Column(name="authorName")
+	@Column(name = "authorName")
 	private String authorName;
 
 	public String getRecipeName() {
@@ -31,14 +29,6 @@ public class Recipe {
 
 	public void setRecipeName(String recipeName) {
 		this.recipeName = recipeName;
-	}
-
-	public String getRecipeDescription() {
-		return recipeDescription;
-	}
-
-	public void setRecipeDiscription(String recipeDescription) {
-		this.recipeDescription = recipeDescription;
 	}
 
 	public LocalDate getRecipeDate() {
@@ -59,8 +49,7 @@ public class Recipe {
 
 	@Override
 	public String toString() {
-		return "Recipe [recipeName=" + recipeName + ", recipeDescription=" + recipeDescription + ", recipeDate="
-				+ recipeDate + ", authorName=" + authorName + "]";
+		return "Recipe [recipeName=" + recipeName + ", recipeDate=" + recipeDate + ", authorName=" + authorName + "]";
 	}
 
 }

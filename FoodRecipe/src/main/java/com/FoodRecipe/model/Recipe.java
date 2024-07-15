@@ -1,5 +1,7 @@
 package com.FoodRecipe.model;
 
+import com.FoodRecipe.dto.RecipeDTO;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,6 +21,14 @@ public class Recipe {
 	private String recipeName;
 	@Column(name = "author_name")
 	private String authorName;
+
+	public Integer getRecipeID() {
+		return recipeID;
+	}
+
+	public void setRecipeID(Integer recipeID) {
+		this.recipeID = recipeID;
+	}
 
 	public String getRecipeName() {
 		return recipeName;
@@ -49,7 +59,16 @@ public class Recipe {
 
 	@Override
 	public String toString() {
-		return "Recipe [recipeName=" + recipeName + ", authorName=" + authorName + "]";
+		return "Recipe [recipeID=" + recipeID + ", recipeName=" + recipeName + ", authorName=" + authorName + "]";
+	}
+
+	public static RecipeDTO prepareRecipeDTO(Recipe recipe) {
+		RecipeDTO recipeDTO = new RecipeDTO();
+		recipeDTO.setRecipeID(recipe.getRecipeID());
+		recipeDTO.setRecipeName(recipe.getRecipeName());
+		recipeDTO.setAuthorName(recipe.getAuthorName());
+		return recipeDTO;
+
 	}
 
 }

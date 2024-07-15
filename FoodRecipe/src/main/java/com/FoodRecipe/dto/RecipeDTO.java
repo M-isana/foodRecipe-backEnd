@@ -1,6 +1,6 @@
 package com.FoodRecipe.dto;
 
-import jakarta.persistence.Column;
+import com.FoodRecipe.model.Recipe;
 
 public class RecipeDTO {
 
@@ -48,6 +48,15 @@ public class RecipeDTO {
 	@Override
 	public String toString() {
 		return "RecipeDTO [recipeID=" + recipeID + ", recipeName=" + recipeName + ", authorName=" + authorName + "]";
+	}
+
+	public static Recipe prepareRecipeEntity(RecipeDTO recipeDTO) {
+		Recipe recipe = new Recipe();
+		recipe.setRecipeID(recipeDTO.getRecipeID());
+		recipe.setRecipeName(recipeDTO.getRecipeName());
+		recipe.setAuthorName(recipeDTO.getAuthorName());
+		return recipe;
+
 	}
 
 }

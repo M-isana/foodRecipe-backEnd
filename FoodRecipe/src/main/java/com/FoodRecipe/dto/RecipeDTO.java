@@ -2,12 +2,20 @@ package com.FoodRecipe.dto;
 
 import com.FoodRecipe.model.Recipe;
 
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+
 public class RecipeDTO {
 
+	@NotNull(message = "{RECIPE.ID_MANDATORY}")
 	private Integer recipeID;
 
+	@NotNull(message = "{RECIPE.NAME_MANDATORY}")
+	@Pattern(regexp = "^[A-Z][a-z]+[(\\s)[A-Za-z]]+", message = "{RECIPE.NAME_REGEX}")
 	private String recipeName;
 
+	@NotNull(message = "{AUTHOR.NAME_MANDATORY}")
+	@Pattern(regexp = "^[A-Z][a-z]+[(\\s)[A-Za-z]]+", message = "{AUTHOR.NAME_REGEX}")
 	private String authorName;
 
 	public Integer getRecipeID() {

@@ -1,7 +1,5 @@
 package com.FoodRecipe.model;
 
-import java.time.LocalDate;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -15,12 +13,11 @@ public class Recipe {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "recipe_id")
 	private Integer recipeID;
 	@Column(name = "recipe_name")
 	private String recipeName;
-	@Column(name = "recipeDate")
-	private LocalDate recipeDate;
-	@Column(name = "authorName")
+	@Column(name = "author_name")
 	private String authorName;
 
 	public String getRecipeName() {
@@ -31,14 +28,6 @@ public class Recipe {
 		this.recipeName = recipeName;
 	}
 
-	public LocalDate getRecipeDate() {
-		return recipeDate;
-	}
-
-	public void setRecipeDate(LocalDate recipeDate) {
-		this.recipeDate = recipeDate;
-	}
-
 	public String getAuthorName() {
 		return authorName;
 	}
@@ -47,9 +36,20 @@ public class Recipe {
 		this.authorName = authorName;
 	}
 
+	public Recipe(Integer recipeID, String recipeName, String authorName) {
+		super();
+		this.recipeID = recipeID;
+		this.recipeName = recipeName;
+		this.authorName = authorName;
+	}
+
+	public Recipe() {
+		super();
+	}
+
 	@Override
 	public String toString() {
-		return "Recipe [recipeName=" + recipeName + ", recipeDate=" + recipeDate + ", authorName=" + authorName + "]";
+		return "Recipe [recipeName=" + recipeName + ", authorName=" + authorName + "]";
 	}
 
 }

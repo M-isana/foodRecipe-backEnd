@@ -1,6 +1,6 @@
 package com.FoodRecipe.dto;
 
-import com.FoodRecipe.model.Recipe;
+import com.FoodRecipe.entity.Recipe;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;

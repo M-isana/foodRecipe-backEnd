@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.FoodRecipe.model.Recipe;
+import com.FoodRecipe.entity.Recipe;
 import com.FoodRecipe.repository.RecipeRepository;
 
 @Service(value = "RecipeService")

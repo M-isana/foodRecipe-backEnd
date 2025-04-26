@@ -1,4 +1,4 @@
-package com.FoodRecipe.model;
+package com.FoodRecipe.entity;
 
 import com.FoodRecipe.dto.RecipeDTO;
 
